@@ -33,10 +33,11 @@ public class LaserBeam
     {
         laserIndices.Add(pos);
 
-        Ray ray = new Ray(pos, dir);
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, 30, 1))
+        Ray2D ray = new Ray2D(pos, dir);
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(pos, dir, 30, 1);
+        Debug.Log(hit.point);
+        if (hit)
         {
             laserIndices.Add(hit.point);
             UpdateLaser();
