@@ -39,8 +39,7 @@ public class LaserBeam
         Debug.Log(hit.point);
         if (hit)
         {
-            laserIndices.Add(hit.point);
-            UpdateLaser();
+            CheckHit(hit, dir, laser);
         }
         else
         {
@@ -60,4 +59,22 @@ public class LaserBeam
             count++;
         }
     }
+
+    void CheckHit(RaycastHit2D hit, Vector2 direction, LineRenderer laser)
+    {
+        if(hit.collider.gameObject.tag == "mirror")
+        {
+            Vector2 pos = hit.point;
+            Vector2 dir = Vector2.Reflect(direction, hit.normal);
+
+            CastRay(pos, dir, laser);
+        }
+        else
+        {
+            laserIndices.Add(hit.point);
+            UpdateLaser();
+        }
+    }
+
+
 }
