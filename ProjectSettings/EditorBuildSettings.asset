@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/laser minigame setup.unity
+    guid: a603fe3ee8516c747aa07b8d78d900cd
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: b568d02a99f726f42a8fa89c7cda46b0
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 5a341295646e8c046a94bde638e24c95
   m_configObjects: {}

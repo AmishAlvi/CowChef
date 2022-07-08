@@ -6,11 +6,12 @@ TagManager:
   tags:
   - mirror
   - two way
+  - food
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mirrors
   - Water
   - UI
   - 
