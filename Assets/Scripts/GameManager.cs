@@ -37,15 +37,26 @@ public class GameManager : MonoBehaviour
     void CheckWin()
     {
         string[] AddOrder = { "Sugar", "Maple", "CoconutMilk", "Vanilla", "Flan" };
-
+        bool Won = true;
         for(int i = 0; i<5; i++)
         {
-            if(AddOrder[i] != AddOrder[i])
+            if(!AddedToDish[i].Equals(AddOrder[i]))
             {
+                Debug.Log(AddedToDish[i].Equals(AddOrder[i]));
                 SceneManager.LoadScene(2);
+                Won = false;
             }
         }
-        SceneManager.LoadScene(1);
+
+        if(Won)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
+        
     }
 
     void startLaser()
