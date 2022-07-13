@@ -6,7 +6,7 @@ public class RayCaster : MonoBehaviour
     public Vector2 direction;
     public float distance = 100;
     [HideInInspector]
-    public Vector3 contactPoint = Vector3.zero;
+    public Vector2 contactPoint = Vector2.zero;
 
     private int mirrorsMask;
     private RaycastHit2D mirrorsHit;
@@ -34,7 +34,7 @@ public class RayCaster : MonoBehaviour
 
     void Update()
     {
-        lineRenderer.SetPosition(0, contactPoint != Vector3.zero ? contactPoint : transform.position);
+        lineRenderer.SetPosition(0, contactPoint != Vector2.zero ? contactPoint : transform.position);
         lineRenderer.SetPosition(1, direction * distance);
 
         Vector2 position = (Vector2)transform.position + direction;
