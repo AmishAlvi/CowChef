@@ -1216,6 +1216,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &667711846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1056190138194152383, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
+  m_PrefabInstance: {fileID: 1712073309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!68 &667711847
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667711846}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0.5}
+  - {x: 0.5, y: -0.5}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &714965645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1448,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
+--- !u!1 &906447349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495605186988231074, guid: 0a9a52a6e752d8e4985419b2b0ddfd61, type: 3}
+  m_PrefabInstance: {fileID: 455853704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &906447355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906447349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89bcaab2e19ae44692405c22102a237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &946261733 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2124780934886111485, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
@@ -2865,6 +2909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1056190138194152323, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1056190138194152383, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
       propertyPath: m_Name
       value: DownLeftMirror
@@ -3011,7 +3059,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764767578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3174,14 +3222,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764767578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 831c9284f5e53514abc74289075d7c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 1000
   maxLength: 100
-  direction: {x: 1, y: 0}
+  direction: {x: 0, y: 1}
 --- !u!114 &1764767583
 MonoBehaviour:
   m_ObjectHideFlags: 0

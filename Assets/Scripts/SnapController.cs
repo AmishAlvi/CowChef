@@ -41,5 +41,15 @@ public class SnapController : MonoBehaviour
         {
             draggable.transform.localPosition = closestSnapPoint.localPosition;
         }
+        else
+        {
+            draggable.transform.localPosition = new Vector3(draggable.MouseDragStartPosition.x, draggable.MouseDragStartPosition.y, 0);
+            onDragEnded(draggable);
+        }
     }
+
+    //private void Snap(float closestDistance, Transform closestSnapPoint,)
+    //{
+
+    //}
 }
