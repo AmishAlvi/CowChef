@@ -8,13 +8,18 @@ public class GameManager : MonoBehaviour
 {
     public List<Food> Ingredients;
     public List<string> AddedToDish;
-    public Button laserButton, stopButton;
+    public List<Text> CookOrderTexts;
+    public List<Image> CookOrderImages;
+    //public Button laserButton, stopButton;
     public GameObject Laser;
+
+    private int OrderCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        laserButton.onClick.AddListener(startLaser);
-        stopButton.onClick.AddListener(stopLaser);
+        //laserButton.onClick.AddListener(startLaser);
+        //stopButton.onClick.AddListener(stopLaser);
     }
 
     // Update is called once per frame
@@ -25,6 +30,12 @@ public class GameManager : MonoBehaviour
             if(f.isAdded && !AddedToDish.Contains(f.name))
             {
                 AddedToDish.Add(f.name);
+                CookOrderTexts[OrderCount].text = f.name;
+                CookOrderTexts[OrderCount].enabled = true;
+                CookOrderImages[OrderCount].sprite = f.gameObject.GetComponent<SpriteRenderer>().sprite;
+                CookOrderImages[OrderCount].enabled = true;
+                Debug.Log("new food text: " + CookOrderTexts[OrderCount].text);
+                OrderCount++;
             }
         }
 
