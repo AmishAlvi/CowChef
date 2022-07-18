@@ -10,6 +10,7 @@ public class laser : MonoBehaviour
     private LineRenderer lineRenderer;
     private Ray2D ray;
     private RaycastHit2D hit;
+    private Food hitFood;
     public Vector2 direction;
     private int mirrorsMask;
 
@@ -34,29 +35,43 @@ public class laser : MonoBehaviour
         {
             
             hit = Physics2D.Raycast(ray.origin, ray.direction, remainingLength, mirrorsMask);
-            //Debug.Log(hit.point.normalized + " hit normal: " + hit.normal + " ray direction: " + ray.direction);
+            
             if (hit)
             {
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
-                Vector2 reflectDirection;
+                Vector2 reflectDirection = getDirection(hit, ray.direction, hit.collider.tag);
                 
-                if (hit.collider.tag == "mirror")
+                if(hit.collider.tag == "food")
                 {
-                    reflectDirection = Vector2.Reflect(ray.direction.normalized, hit.normal);
-                   // Debug.Log("reflect direction: " + reflectDirection);
+                    hitFood = hit.collider.gameObject.GetComponent<Food>();
+                    hitFood.isBeingAdded = true;
                 }
                 else
                 {
-                    reflectDirection = ray.direction;
-                    if (hit.collider.tag == "food")
+                    if(hitFood != null)
                     {
-                        Food hitFood = hit.collider.gameObject.GetComponent<Food>();
-                        hitFood.isAdded = true;
+                        hitFood.isBeingAdded=false;
                     }
-                    
                 }
+
+
+                //if (hit.collider.tag == "mirror")
+                //{
+                //    reflectDirection = Vector2.Reflect(ray.direction.normalized, hit.normal);
+                   
+                //}
+                //else
+                //{
+                //    reflectDirection = ray.direction;
+                //    if (hit.collider.tag == "food")
+                //    {
+                //        hitFood = hit.collider.gameObject.GetComponent<Food>();
+                //        hitFood.isBeingAdded = true;
+                //    }
+                    
+                //}
 
                 ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
 
@@ -68,7 +83,10 @@ public class laser : MonoBehaviour
             }
         }
 
-       // Debug.Log("ray direction after: " + ray.direction);
-        //Debug.Log("------");
+    }
+
+    private Vector2 getDirection(RaycastHit2D hit, Vector2 rayDirection, string tag)
+    {
+        return tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;  
     }
 }
