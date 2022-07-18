@@ -56,23 +56,6 @@ public class laser : MonoBehaviour
                     }
                 }
 
-
-                //if (hit.collider.tag == "mirror")
-                //{
-                //    reflectDirection = Vector2.Reflect(ray.direction.normalized, hit.normal);
-                   
-                //}
-                //else
-                //{
-                //    reflectDirection = ray.direction;
-                //    if (hit.collider.tag == "food")
-                //    {
-                //        hitFood = hit.collider.gameObject.GetComponent<Food>();
-                //        hitFood.isBeingAdded = true;
-                //    }
-                    
-                //}
-
                 ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
 
             }

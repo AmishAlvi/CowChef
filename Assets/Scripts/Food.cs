@@ -8,7 +8,7 @@ public class Food : MonoBehaviour
     public bool isAdded, isBeingAdded;
     public Slider progressSlider;
     [Tooltip("Speed at which the progress bar should fill up  1 = 1/100 filled every second")]
-    public float progressSpeed = 0.5f;
+    public float progressSpeed = 10f;
     // Start is called before the first frame update
     private void Awake()
     {
