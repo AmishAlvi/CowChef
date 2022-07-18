@@ -40,22 +40,26 @@ public class laser : MonoBehaviour
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
-                //ray = new Ray2D(hit.point, Vector2.Reflect(ray.direction, hit.normal));
-                //ray = new Ray2D(hit.point, transform.up);
-                /*if (hit.collider.tag == "mirror")
-                {*/
-                    Vector2 reflectDirection = Vector2.Reflect(ray.direction.normalized, hit.normal);
-                    Debug.Log("reflect direction: " + reflectDirection);
-                    ray = new Ray2D(hit.point + reflectDirection, Vector2.Reflect(ray.direction.normalized, hit.normal)); 
-                    //break;
-                //}
+                Vector2 reflectDirection;
+                
+                if (hit.collider.tag == "mirror")
+                {
+                    reflectDirection = Vector2.Reflect(ray.direction.normalized, hit.normal);
+                   // Debug.Log("reflect direction: " + reflectDirection);
+                }
+                else
+                {
+                    reflectDirection = ray.direction;
+                    if (hit.collider.tag == "food")
+                    {
+                        Food hitFood = hit.collider.gameObject.GetComponent<Food>();
+                        hitFood.isAdded = true;
+                    }
+                    
+                }
 
-                //if (hit.collider.tag == "two way")
-                //{
-                //    debug.log("here " + remaininglength);
-                //    ray = new ray2d(hit.point - new vector2(maxlength / 2, 0), transform.right);
-                //    //ray = new ray2d(hit.point, -transform.right);
-                //}
+                ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
+
             }
             else
             {
@@ -64,7 +68,7 @@ public class laser : MonoBehaviour
             }
         }
 
-        Debug.Log("ray direction after: " + ray.direction);
-        Debug.Log("------");
+       // Debug.Log("ray direction after: " + ray.direction);
+        //Debug.Log("------");
     }
 }
