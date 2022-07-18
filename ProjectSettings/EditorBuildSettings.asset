@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 6a090f31f9d76254bbc2c40b69298073
+  - enabled: 1
+    path: Assets/Scenes/DialogScene.unity
+    guid: a0323c2d079d0824d93f8564e022e099
+  - enabled: 1
+    path: Assets/Scenes/BookScene.unity
+    guid: 99f910879c965f942a7a9b7dc1ddd505
+  - enabled: 1
+    path: Assets/Scenes/GameDesignTestScenes.unity
+    guid: 54e9c3cd19042a140b89f1f0f2a76220
+  - enabled: 1
+    path: Assets/Scenes/OtherMinigame.unity
+    guid: e177f55e8d0ce6848bf516c86d0cf1eb
+  - enabled: 1
     path: Assets/Scenes/laser minigame setup.unity
     guid: a603fe3ee8516c747aa07b8d78d900cd
-  - enabled: 1
-    path: Assets/Scenes/WinScene.unity
-    guid: b568d02a99f726f42a8fa89c7cda46b0
-  - enabled: 1
-    path: Assets/Scenes/LoseScene.unity
-    guid: 5a341295646e8c046a94bde638e24c95
   m_configObjects: {}

@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject WinPanel;
+
+    [SerializeField]
+    private GameObject LosePanel;
+
     public List<Food> Ingredients;
     public List<string> AddedToDish;
     public List<Text> CookOrderTexts;
@@ -20,6 +26,9 @@ public class GameManager : MonoBehaviour
     {
         //laserButton.onClick.AddListener(startLaser);
         //stopButton.onClick.AddListener(stopLaser);
+        WinPanel.SetActive(false);
+        LosePanel.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -54,18 +63,18 @@ public class GameManager : MonoBehaviour
             if(!AddedToDish[i].Equals(AddOrder[i]))
             {
                 Debug.Log(AddedToDish[i].Equals(AddOrder[i]));
-                SceneManager.LoadScene(2);
+                LosePanel.SetActive(true);
                 Won = false;
             }
         }
 
         if(Won)
         {
-            SceneManager.LoadScene(1);
+            WinPanel.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene(2);
+            LosePanel.SetActive(true);
         }
         
     }
