@@ -87,6 +87,13 @@ public class laser : MonoBehaviour
 
     private Vector2 getDirection(RaycastHit2D hit, Vector2 rayDirection, string tag)
     {
-        return tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;  
+
+        Vector2 direction = tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;
+        if(Vector2.Dot(direction, rayDirection) == -1)
+        {
+            return Vector2.zero;
+        }
+
+        return direction;
     }
 }
