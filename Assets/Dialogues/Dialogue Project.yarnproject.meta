@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ea7191e0ec280248ba603468cecd419
+guid: 7b28c58c33d4b184085ca0318fe51d8f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,10 +9,10 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {fileID: 6391573757903218779, guid: f137e9f0a0eab444c89ef12a45095f67, type: 3}
+  - {fileID: 6391573757903218779, guid: 039f49eea3c4ae541b9ad279d7573538, type: 3}
   compileErrors: []
   serializedDeclarations: []
-  defaultLanguage: pt-BR
+  defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0
   searchAllAssembliesForActions: 1

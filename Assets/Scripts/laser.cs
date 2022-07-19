@@ -41,7 +41,7 @@ public class laser : MonoBehaviour
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
-                Vector2 reflectDirection = getDirection(hit, ray.direction, hit.collider.tag);
+                Vector2 reflectDirection = GetDirection(hit, ray.direction, hit.collider.tag);
                 
                 if(hit.collider.tag == "food")
                 {
@@ -68,7 +68,7 @@ public class laser : MonoBehaviour
 
     }
 
-    private Vector2 getDirection(RaycastHit2D hit, Vector2 rayDirection, string tag)
+    private Vector2 GetDirection(RaycastHit2D hit, Vector2 rayDirection, string tag)
     {
 
         Vector2 direction = tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;

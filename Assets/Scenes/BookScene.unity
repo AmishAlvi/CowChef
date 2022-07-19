@@ -2475,6 +2475,7 @@ GameObject:
   - component: {fileID: 690123132}
   - component: {fileID: 690123131}
   - component: {fileID: 690123130}
+  - component: {fileID: 690123133}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2530,6 +2531,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690123133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690123129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd753fe8b18eec449a0965219fb7a168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &715096609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,6 +6736,18 @@ MonoBehaviour:
           m_StringArgument: GameDesignTestScenes
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2140442724}
+        m_TargetAssemblyTypeName: PlayerChoiceHandler, Assembly-CSharp
+        m_MethodName: SaveRecipeChoice
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DialogScene_Success
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954631493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7555,6 +7580,7 @@ GameObject:
   - component: {fileID: 2140442722}
   - component: {fileID: 2140442721}
   - component: {fileID: 2140442723}
+  - component: {fileID: 2140442724}
   m_Layer: 5
   m_Name: CookBookPanel
   m_TagString: Untagged
@@ -7631,5 +7657,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b5a9cb85dec831478f96bd43b2e8378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2140442724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140442719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd753fe8b18eec449a0965219fb7a168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

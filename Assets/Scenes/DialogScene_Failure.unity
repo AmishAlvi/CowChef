@@ -389,6 +389,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717953810}
   m_CullTransparentMesh: 1
+--- !u!1 &1824001749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6592936690465756724, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+  m_PrefabInstance: {fileID: 3957214776254682256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1824001750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824001749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5a9cb85dec831478f96bd43b2e8378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1939538266
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,13 +577,45 @@ PrefabInstance:
     m_TransformParent: {fileID: 302546034}
     m_Modifications:
     - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: startNode
+      value: Customer_2_Recipe_Failed
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
       propertyPath: yarnProject
       value: 
       objectReference: {fileID: 7545569452688597077, guid: 7b28c58c33d4b184085ca0318fe51d8f, type: 3}
     - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 302546035}
+      objectReference: {fileID: 1824001750}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeSceneScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ThankYouScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 524472108686659235, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1215393753756337886, guid: 8da64ac0a479e3b46b07c6f1bf3c4d28, type: 3}
       propertyPath: m_Name
       value: Dialogue System
