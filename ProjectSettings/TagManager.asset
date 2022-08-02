@@ -7,6 +7,7 @@ TagManager:
   - mirror
   - two way
   - food
+  - laser
   layers:
   - Default
   - TransparentFX

@@ -43,7 +43,7 @@ public class laser : MonoBehaviour
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
                 Vector2 reflectDirection = GetDirection(hit, ray.direction, hit.collider.tag);
                 
-                if(hit.collider.tag == "food")
+                /*if(hit.collider.tag == "food")
                 {
                     hitFood = hit.collider.gameObject.GetComponent<Food>();
                     hitFood.isBeingAdded = true;
@@ -54,7 +54,7 @@ public class laser : MonoBehaviour
                     {
                         hitFood.isBeingAdded=false;
                     }
-                }
+                }*/
 
                 ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
 
@@ -62,6 +62,7 @@ public class laser : MonoBehaviour
             else
             {
                 lineRenderer.positionCount += 1;
+                //lineRenderer.startColor = Color.blue;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
             }
         }
@@ -79,4 +80,5 @@ public class laser : MonoBehaviour
 
         return direction;
     }
+
 }

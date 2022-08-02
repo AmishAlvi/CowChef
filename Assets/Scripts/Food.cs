@@ -36,4 +36,34 @@ public class Food : MonoBehaviour
        
     }
 
+    /*if(hit.collider.tag == "food")
+                {
+                    hitFood = hit.collider.gameObject.GetComponent<Food>();
+                    hitFood.isBeingAdded = true;
+                }
+                else
+                {
+                    if(hitFood != null)
+                    {
+                        hitFood.isBeingAdded=false;
+                    }
+                }*/
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "laser")
+        {
+            isBeingAdded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(isBeingAdded)
+        {
+            isBeingAdded=false;
+        }
+    }
+
+
 }

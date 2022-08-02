@@ -4765,9 +4765,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cdbe77bfc213020408ec0dd718df65ad, type: 3}
+    - target: {fileID: 2124780934886111426, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124780934886111427, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
       propertyPath: m_Name
       value: Flan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124780934886111427, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2124780934886111485, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
       propertyPath: progressSpeed
@@ -6480,11 +6488,12 @@ GameObject:
   - component: {fileID: 1764767581}
   - component: {fileID: 1764767580}
   - component: {fileID: 1764767582}
-  - component: {fileID: 1764767584}
   - component: {fileID: 1764767579}
+  - component: {fileID: 1764767584}
+  - component: {fileID: 1764767583}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6540,7 +6549,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.09859127
+        value: 0.108204305
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -6667,19 +6676,40 @@ MonoBehaviour:
   reflections: 1000
   maxLength: 100
   direction: {x: 0, y: 1}
---- !u!65 &1764767584
-BoxCollider:
+--- !u!68 &1764767583
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764767578}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!114 &1764767584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764767578}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e079d15905ae246bcf1314280fc9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1779604574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8465326777639177300, guid: 83aac1a5e9a60984284cf8826954c6f3, type: 3}
