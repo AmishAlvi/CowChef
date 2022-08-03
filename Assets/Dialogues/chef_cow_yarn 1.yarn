@@ -47,6 +47,8 @@ Daphne: ...Hi...
 title: Kitchen_Monologue_1
 position: -300, -100
 ---
+// This should take place after selecting the recipe, but before starting the cooking puzzle.
+// NOTE : it's called "Kitchen Monologue" but for scope, let's have it in the usual restaurant background
 Maurice: Other cooks use knives and stovepots...
                             // If you wanna add a text wiggle this is your Moment
 Maurice: But <b>I</b> have a [wiggle]laserbeam[/wiggle] ;)
