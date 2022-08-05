@@ -1,8 +1,7 @@
-using System.Collections;
+#if (UNITY_EDITOR) 
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using System;
 
 public class GridMapCreator : EditorWindow
 {
@@ -113,3 +112,5 @@ public class GridMapCreator : EditorWindow
         Handles.EndGUI();
     }
 }
+
+#endif
