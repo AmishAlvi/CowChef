@@ -11,9 +11,9 @@ public class Draggable : MonoBehaviour
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
     private bool isDragged = false;
-    private LineRenderer lineRenderer;
-    bool lineRendererStatus;
-    private RayCaster rayCaster;
+   // private LineRenderer lineRenderer;
+   // bool lineRendererStatus;
+   // private RayCaster rayCaster;
 
     Camera cam;
 
@@ -22,9 +22,9 @@ public class Draggable : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
-        lineRenderer = GetComponent<LineRenderer>();
+       /* lineRenderer = GetComponent<LineRenderer>();
         rayCaster = GetComponent<RayCaster>();
-        lineRendererStatus = lineRenderer.enabled;
+        lineRendererStatus = lineRenderer.enabled;*/
     }
 
 

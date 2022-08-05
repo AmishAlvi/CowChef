@@ -1469,6 +1469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DownRightMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 8495605186988231074, guid: 0a9a52a6e752d8e4985419b2b0ddfd61, type: 3}
+      propertyPath: m_TagString
+      value: mirror
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a9a52a6e752d8e4985419b2b0ddfd61, type: 3}
 --- !u!4 &468036696 stripped
@@ -4093,8 +4097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde738378f2a10a459cde2419b67a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 6
-  height: 5
+  width: 16
+  height: 9
   tilePrefab: {fileID: -6125538679785611267, guid: 94ed4976cf4f494459a9d0132397707f, type: 3}
   cam: {fileID: 519420032}
 --- !u!4 &1206567801
