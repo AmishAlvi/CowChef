@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //laserButton.onClick.AddListener(startLaser);
-        //stopButton.onClick.AddListener(stopLaser);
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
 
@@ -79,20 +77,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void startLaser()
-    {
-        Laser.GetComponent<RayCaster>().enabled = true;
-    }
-
-    void stopLaser()
-    {
-        Laser.GetComponent<RayCaster>().enabled = false;
-        Laser.GetComponent<LineRenderer>().enabled = false;
-        AddedToDish.Clear();
-        foreach (Food f in Ingredients)
-        {
-            f.isAdded = false;
-        }
-    }
 }
 

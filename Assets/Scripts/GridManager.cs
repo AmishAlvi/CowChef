@@ -20,6 +20,7 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
         PlaceMirrors();
         PlaceLaser();
+        PlaceFood();
     }
 
     void GenerateGrid()
@@ -54,5 +55,11 @@ public class GridManager : MonoBehaviour
     {
         var spawnedLaser = Instantiate(laser, level.laserLocation, Quaternion.identity);
         spawnedLaser.direction = level.laserDirection;
+    }
+
+    void PlaceFood()
+    {
+        var spawnedFood = Instantiate(level.foodPrefab, level.foodLocation, Quaternion.identity);
+        spawnedFood.GetComponent<SpriteRenderer>().sprite = level.foodSprite;
     }
 }
