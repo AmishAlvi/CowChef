@@ -8,10 +8,14 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private Draggable MirrorPrefab;
     [SerializeField] private Transform cam;
+
+    public Level level;
     public Vector3 mirrorLocation; 
 
     private void Start()
     {
+        width = level.rows;
+        height = level.cols;
         GenerateGrid();
         PlaceMirrors();
     }
@@ -37,6 +41,11 @@ public class GridManager : MonoBehaviour
 
     void PlaceMirrors()
     {
-        var spawnedMirror = Instantiate(MirrorPrefab, mirrorLocation, Quaternion.identity);
+        foreach(Level.Mirror mirror in level.mirrors)
+        {
+            Instantiate(MirrorPrefab, mirror.location, Quaternion.Euler(mirror.rotation));
+        }
+       // Debug.Log(Quaternion.identity);
+       // Instantiate(MirrorPrefab, mirrorLocation, Quaternion.Euler(0,0,90));
     }
 }

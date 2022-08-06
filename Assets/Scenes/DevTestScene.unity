@@ -4102,7 +4102,8 @@ MonoBehaviour:
   tilePrefab: {fileID: -6125538679785611267, guid: 94ed4976cf4f494459a9d0132397707f, type: 3}
   MirrorPrefab: {fileID: 1056190138194152380, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
   cam: {fileID: 519420032}
-  mirrorLocation: {x: 4, y: 0, z: 0}
+  level: {fileID: 11400000, guid: c73a1d5805c77f448b040c96b1ae035e, type: 2}
+  mirrorLocation: {x: 3, y: 4, z: 0}
 --- !u!4 &1206567801
 Transform:
   m_ObjectHideFlags: 0
