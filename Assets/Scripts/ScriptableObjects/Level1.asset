@@ -21,3 +21,5 @@ MonoBehaviour:
   - rotation: {x: 0, y: 0, z: 0}
     location: {x: 1, y: 2}
   mirrorPrefab: {fileID: 1056190138194152383, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
+  laserDirection: {x: 0, y: 2}
+  laserLocation: {x: 2, y: 0}

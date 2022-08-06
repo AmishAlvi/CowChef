@@ -11,6 +11,12 @@ public class Level : ScriptableObject
     public List<Mirror> mirrors = new List<Mirror>();
     public GameObject mirrorPrefab;
 
+    // location and rotation of laser
+    public Vector2 laserDirection;
+    public Vector2 laserLocation;
+
+
+    //class to put mirrors in mirror list
     [System.Serializable]
     public class Mirror
     {

@@ -7,6 +7,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int width, height;
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private Draggable MirrorPrefab;
+    [SerializeField] private laser laser;
     [SerializeField] private Transform cam;
 
     public Level level;
@@ -14,10 +15,11 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
-        width = level.rows;
-        height = level.cols;
+        width = level.cols;
+        height = level.rows;
         GenerateGrid();
         PlaceMirrors();
+        PlaceLaser();
     }
 
     void GenerateGrid()
@@ -45,7 +47,12 @@ public class GridManager : MonoBehaviour
         {
             Instantiate(MirrorPrefab, mirror.location, Quaternion.Euler(mirror.rotation));
         }
-       // Debug.Log(Quaternion.identity);
-       // Instantiate(MirrorPrefab, mirrorLocation, Quaternion.Euler(0,0,90));
+
+    }
+
+    void PlaceLaser()
+    {
+        var spawnedLaser = Instantiate(laser, level.laserLocation, Quaternion.identity);
+        spawnedLaser.direction = level.laserDirection;
     }
 }
