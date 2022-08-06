@@ -8,8 +8,9 @@ public class Level : ScriptableObject
     public string name;
 
     public int rows, cols;
-    public List<Mirror> mirrors = new List<Mirror>();
     public GameObject mirrorPrefab;
+    public List<Mirror> mirrors = new List<Mirror>();
+
 
     // location and rotation of laser
     public Vector2 laserDirection;
