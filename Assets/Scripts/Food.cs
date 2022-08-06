@@ -1,20 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Food : MonoBehaviour
+public class Food : MonoBehaviour, IObservable<Food>
 {
-    public bool isAdded, isBeingAdded;
+    public bool isAdded;
+    public static event Action foodCooked;
 
     private void Awake()
     {
         isAdded = false;
     }
 
-    private void Update()
+    private void Added()
     {
-       
+        foodCooked?.Invoke();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -33,5 +32,8 @@ public class Food : MonoBehaviour
         }
     }
 
-
+    IDisposable IObservable<Food>.Subscribe(IObserver<Food> observer)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -59,7 +59,10 @@ public class GridManager : MonoBehaviour
 
     void PlaceFood()
     {
-        var spawnedFood = Instantiate(level.foodPrefab, level.foodLocation, Quaternion.identity);
-        spawnedFood.GetComponent<SpriteRenderer>().sprite = level.foodSprite;
+        foreach (Level.FoodItem food in level.food)
+        {
+            var spawnedFood = Instantiate(level.foodPrefab, food.location, Quaternion.identity);
+            spawnedFood.GetComponent<SpriteRenderer>().sprite = food.sprite;
+        }
     }
 }

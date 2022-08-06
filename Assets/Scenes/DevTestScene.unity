@@ -3001,6 +3001,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WinPanel: {fileID: 992189214}
   LosePanel: {fileID: 1051909957}
+  GridManager: {fileID: 1206567800}
+  level: {fileID: 11400000, guid: ce8268029d082f746ace9197cdf4b756, type: 2}
   Ingredients:
   - {fileID: 1865817314}
   - {fileID: 358572611}

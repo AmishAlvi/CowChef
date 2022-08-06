@@ -1,16 +1,17 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IObserver<Food>
 {
-    [SerializeField]
-    private GameObject WinPanel;
+    [SerializeField] private GameObject WinPanel;
+    [SerializeField] private GameObject LosePanel;
+    [SerializeField] private GridManager GridManager;
 
-    [SerializeField]
-    private GameObject LosePanel;
+    public Level level;
+
 
     public List<Food> Ingredients;
     public List<string> AddedToDish;
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     public GameObject Laser;
 
     private int OrderCount = 0;
+
+    private void Awake()
+    {
+        GridManager.level = level;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -77,5 +83,19 @@ public class GameManager : MonoBehaviour
         
     }
 
+    void IObserver<Food>.OnCompleted()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IObserver<Food>.OnError(Exception error)
+    {
+        throw new NotImplementedException();
+    }
+
+    void IObserver<Food>.OnNext(Food value)
+    {
+        throw new NotImplementedException();
+    }
 }
 
