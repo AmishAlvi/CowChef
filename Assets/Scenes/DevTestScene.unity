@@ -3783,8 +3783,8 @@ MonoBehaviour:
     Make
     sure to collect all of ingredients to succeed the puzzle.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3c5ff8dc20eeec145aae6b3187511082, type: 2}
-  m_sharedMaterial: {fileID: 613089928828173501, guid: 3c5ff8dc20eeec145aae6b3187511082, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4084,7 +4084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1206567800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,10 +4097,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde738378f2a10a459cde2419b67a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 16
-  height: 9
+  width: 6
+  height: 5
   tilePrefab: {fileID: -6125538679785611267, guid: 94ed4976cf4f494459a9d0132397707f, type: 3}
+  MirrorPrefab: {fileID: 1056190138194152380, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
   cam: {fileID: 519420032}
+  mirrorLocation: {x: 4, y: 0, z: 0}
 --- !u!4 &1206567801
 Transform:
   m_ObjectHideFlags: 0
@@ -5049,27 +5051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a71cd908f39fdf419acb80d7c1cb24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoints:
-  - {fileID: 635621583}
-  - {fileID: 1743896568}
-  - {fileID: 1565265647}
-  - {fileID: 501225692}
-  - {fileID: 514931994}
-  - {fileID: 1352842154}
-  - {fileID: 1210858237}
-  - {fileID: 1896011783}
-  - {fileID: 205409689}
-  - {fileID: 1616713132}
-  - {fileID: 1043038135}
-  - {fileID: 1603283942}
-  - {fileID: 1843311692}
-  - {fileID: 2130841496}
-  - {fileID: 1226044221}
-  - {fileID: 1461425452}
-  - {fileID: 2145280190}
-  - {fileID: 1525068850}
-  - {fileID: 562439771}
-  draggableObjects: []
   snapRange: 0.5
 --- !u!4 &1401299795
 Transform:
@@ -5100,7 +5081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1431117041
 Transform:
   m_ObjectHideFlags: 0
@@ -8104,8 +8085,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3c5ff8dc20eeec145aae6b3187511082, type: 2}
-  m_sharedMaterial: {fileID: 613089928828173501, guid: 3c5ff8dc20eeec145aae6b3187511082, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

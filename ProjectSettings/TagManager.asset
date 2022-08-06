@@ -8,6 +8,7 @@ TagManager:
   - two way
   - food
   - laser
+  - grid point
   layers:
   - Default
   - TransparentFX
