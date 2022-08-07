@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour, IObserver<Food>
+public class GameManager : MonoBehaviour, Observer
 {
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject LosePanel;
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour, IObserver<Food>
     public Level level;
 
 
-    public List<Food> Ingredients;
+    public Food[] Ingredients;
     public List<string> AddedToDish;
     public List<Text> CookOrderTexts;
     public List<Image> CookOrderImages;
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour, IObserver<Food>
     private void Awake()
     {
         GridManager.level = level;
+        
+
     }
 
     // Start is called before the first frame update
@@ -32,13 +34,19 @@ public class GameManager : MonoBehaviour, IObserver<Food>
     {
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
-
+        GridManager.InitializeLevel();
+        Ingredients = FindObjectsOfType<Food>();
+        foreach (Food f in Ingredients)
+        {
+            f.Subscribe(this);
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       foreach(Food f in Ingredients)
+       /*foreach(Food f in Ingredients)
         {
             if(f.isAdded && !AddedToDish.Contains(f.name))
             {
@@ -50,7 +58,7 @@ public class GameManager : MonoBehaviour, IObserver<Food>
                 Debug.Log("new food text: " + CookOrderTexts[OrderCount].text);
                 OrderCount++;
             }
-        }
+        }*/
 
        if(AddedToDish.Count == 5)
         {
@@ -83,19 +91,11 @@ public class GameManager : MonoBehaviour, IObserver<Food>
         
     }
 
-    void IObserver<Food>.OnCompleted()
+    public void Notify(Observable observable)
     {
-        throw new NotImplementedException();
-    }
+        Food tempFood = (Food) observable;
+        Debug.Log(tempFood.getOrder() + " " + tempFood.isAdded);
 
-    void IObserver<Food>.OnError(Exception error)
-    {
-        throw new NotImplementedException();
-    }
-
-    void IObserver<Food>.OnNext(Food value)
-    {
-        throw new NotImplementedException();
     }
 }
 

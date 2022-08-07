@@ -9,14 +9,21 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Draggable MirrorPrefab;
     [SerializeField] private laser laser;
     [SerializeField] private Transform cam;
+    [SerializeField] private GameManager gameManager;
 
     public Level level;
-    public Vector3 mirrorLocation; 
+    public Vector3 mirrorLocation;
+    private List<Food> ingredients;
 
     private void Start()
     {
         width = level.cols;
         height = level.rows;
+        ingredients = new List<Food>();
+    }
+
+    public void InitializeLevel()
+    {
         GenerateGrid();
         PlaceMirrors();
         PlaceLaser();
@@ -63,6 +70,10 @@ public class GridManager : MonoBehaviour
         {
             var spawnedFood = Instantiate(level.foodPrefab, food.location, Quaternion.identity);
             spawnedFood.GetComponent<SpriteRenderer>().sprite = food.sprite;
+            Food spFood = spawnedFood.GetComponent<Food>();
+            spFood.Subscribe(gameManager);
+            spFood.setOrder(food.orderNumber);
+
         }
     }
 }
