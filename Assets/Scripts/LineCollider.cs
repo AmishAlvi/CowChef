@@ -25,7 +25,7 @@ public class LineCollider : MonoBehaviour
         for(int point = 0; point < lineRenderer.positionCount; point++)
         {
             Vector3 lineRendererPoint = lineRenderer.GetPosition(point);
-            edges.Add(new Vector2(lineRendererPoint.x, lineRendererPoint.y + 2.5f));
+            edges.Add(new Vector2(lineRendererPoint.x - transform.position.x, lineRendererPoint.y - transform.position.y));
         }
 
         edgeCollider.SetPoints(edges);

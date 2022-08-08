@@ -1,18 +1,19 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, Observer
 {
-    [SerializeField]
-    private GameObject WinPanel;
+    [SerializeField] private GameObject WinPanel;
+    [SerializeField] private GameObject LosePanel;
+    [SerializeField] private GridManager GridManager;
 
-    [SerializeField]
-    private GameObject LosePanel;
+    public Level level;
 
-    public List<Food> Ingredients;
+
+    public Food[] Ingredients;
     public List<string> AddedToDish;
     public List<Text> CookOrderTexts;
     public List<Image> CookOrderImages;
@@ -21,20 +22,31 @@ public class GameManager : MonoBehaviour
 
     private int OrderCount = 0;
 
+    private void Awake()
+    {
+        GridManager.level = level;
+        
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        //laserButton.onClick.AddListener(startLaser);
-        //stopButton.onClick.AddListener(stopLaser);
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
-
+        GridManager.InitializeLevel();
+        Ingredients = FindObjectsOfType<Food>();
+        foreach (Food f in Ingredients)
+        {
+            f.Subscribe(this);
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       foreach(Food f in Ingredients)
+       /*foreach(Food f in Ingredients)
         {
             if(f.isAdded && !AddedToDish.Contains(f.name))
             {
@@ -46,7 +58,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("new food text: " + CookOrderTexts[OrderCount].text);
                 OrderCount++;
             }
-        }
+        }*/
 
        if(AddedToDish.Count == 5)
         {
@@ -79,20 +91,11 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void startLaser()
+    public void Notify(Observable observable)
     {
-        Laser.GetComponent<RayCaster>().enabled = true;
-    }
+        Food tempFood = (Food) observable;
+        Debug.Log(tempFood.getOrder() + " " + tempFood.isAdded);
 
-    void stopLaser()
-    {
-        Laser.GetComponent<RayCaster>().enabled = false;
-        Laser.GetComponent<LineRenderer>().enabled = false;
-        AddedToDish.Clear();
-        foreach (Food f in Ingredients)
-        {
-            f.isAdded = false;
-        }
     }
 }
 

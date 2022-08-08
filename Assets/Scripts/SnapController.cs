@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SnapController : MonoBehaviour
 {
-    public List<Transform> snapPoints;
-    public List<Draggable> draggableObjects;
+    private List<Transform> snapPoints;
+    private List<Draggable> draggableObjects;
+
     public float snapRange = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Draggable dg in FindObjectsOfType(typeof(Draggable)))
+        snapPoints = new List<Transform>();
+        draggableObjects = new List<Draggable>();
+
+        foreach (Draggable dg in FindObjectsOfType(typeof(Draggable)))
         {
             draggableObjects.Add(dg);
+        }
+
+        foreach(GameObject gp in GameObject.FindGameObjectsWithTag("grid point"))
+        {
+            snapPoints.Add(gp.transform);
         }
 
 
