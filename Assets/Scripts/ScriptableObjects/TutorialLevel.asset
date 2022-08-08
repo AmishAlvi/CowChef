@@ -10,26 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb3045d477aad94ba1ef920700063d4, type: 3}
-  m_Name: Level2
+  m_Name: TutorialLevel
   m_EditorClassIdentifier: 
-  name: Level2
-  rows: 6
-  cols: 5
+  name: 
+  rows: 3
+  cols: 3
   mirrorPrefab: {fileID: 1056190138194152383, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
   foodPrefab: {fileID: 2124780934886111427, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
   mirrors:
-  - rotation: {x: 0, y: 0, z: 90}
-    location: {x: 3, y: 2}
   - rotation: {x: 0, y: 0, z: 0}
-    location: {x: 1, y: 2}
+    location: {x: 1, y: 1}
   food:
-  - location: {x: 0, y: 1}
-    sprite: {fileID: 21300000, guid: bf5f5763e67b361418fc68385cdfec72, type: 3}
+  - location: {x: 2, y: 0}
+    sprite: {fileID: 21300000, guid: c929fb7c4c7f2e247817cd8e4a0a3a2e, type: 3}
     orderNumber: 0
-    name: Sugar
-  - location: {x: 0, y: 3}
-    sprite: {fileID: 21300000, guid: b084326efe98f0f4ca7cbf9d4e481f82, type: 3}
-    orderNumber: 1
-    name: Vanilla
-  laserDirection: {x: 0, y: 2}
-  laserLocation: {x: 3, y: 1}
+    name: Water
+  laserDirection: {x: 1, y: 0}
+  laserLocation: {x: 0, y: 1}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private int width, height;
+    private int width, height;
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private Draggable MirrorPrefab;
     [SerializeField] private laser laser;
@@ -15,10 +15,15 @@ public class GridManager : MonoBehaviour
     public Vector3 mirrorLocation;
     private List<Food> ingredients;
 
-    private void Start()
+    private void Awake()
     {
         width = level.cols;
         height = level.rows;
+    }
+
+    private void Start()
+    {
+
         ingredients = new List<Food>();
     }
 
@@ -73,6 +78,7 @@ public class GridManager : MonoBehaviour
             Food spFood = spawnedFood.GetComponent<Food>();
             spFood.Subscribe(gameManager);
             spFood.setOrder(food.orderNumber);
+            spFood.SetName(food.name);
 
         }
     }

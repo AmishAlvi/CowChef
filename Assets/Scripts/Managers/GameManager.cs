@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour, Observer
     {
         Food tempFood = (Food) observable;
         Debug.Log(tempFood.getOrder() + " " + tempFood.isAdded);
+        Debug.Log(tempFood.GetName());
 
     }
 }
