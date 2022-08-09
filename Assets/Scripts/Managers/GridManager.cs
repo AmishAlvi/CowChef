@@ -23,12 +23,12 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
-
-        ingredients = new List<Food>();
+        
     }
 
     public void InitializeLevel()
     {
+        ingredients = new List<Food>();
         GenerateGrid();
         PlaceMirrors();
         PlaceLaser();
@@ -79,7 +79,12 @@ public class GridManager : MonoBehaviour
             spFood.Subscribe(gameManager);
             spFood.setOrder(food.orderNumber);
             spFood.SetName(food.name);
-
+            ingredients.Add(spFood);
         }
+    }
+
+    public List<Food> GetFood()
+    {
+        return ingredients;
     }
 }

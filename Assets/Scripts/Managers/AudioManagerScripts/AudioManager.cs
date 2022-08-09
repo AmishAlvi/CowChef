@@ -23,14 +23,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip audioClip)
+    public void PlaySound(AudioClip audioClip, float volume)
     {
-        effectSource.PlayOneShot(audioClip);
+        effectSource.PlayOneShot(audioClip, volume);
     }
 
-    public void PlayMusic(AudioClip audioClip)
+    public void ChangeMusic(AudioClip clip, float volume)
     {
-        musicSource.PlayOneShot(audioClip);
+        //musicSource.clip = clip;
+       // musicSource.volume = volume;
+        musicSource.PlayOneShot(clip, volume);
     }
 
     public void ToggleEffects()

@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour, Observer
 {
+    public UnityEvent test;
+
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject LosePanel;
     [SerializeField] private GridManager GridManager;
+    [SerializeField] private UIManager UIManager;
 
     public Level level;
 
 
     public Food[] Ingredients;
-    public List<string> AddedToDish;
-    public List<Text> CookOrderTexts;
-    public List<Image> CookOrderImages;
     //public Button laserButton, stopButton;
     public GameObject Laser;
 
@@ -32,9 +33,12 @@ public class GameManager : MonoBehaviour, Observer
     // Start is called before the first frame update
     void Start()
     {
+        test.Invoke();
+
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
         GridManager.InitializeLevel();
+        UIManager.InstantiateUI(GridManager.GetFood());
         Ingredients = FindObjectsOfType<Food>();
         foreach (Food f in Ingredients)
         {
@@ -60,15 +64,15 @@ public class GameManager : MonoBehaviour, Observer
             }
         }*/
 
-       if(AddedToDish.Count == 5)
+       /*if(AddedToDish.Count == 5)
         {
             CheckWin();
-        }
+        }*/
     }
 
     void CheckWin()
     {
-        string[] AddOrder = { "Sugar", "Maple", "CoconutMilk", "Vanilla", "Flan" };
+       /* string[] AddOrder = { "Sugar", "Maple", "CoconutMilk", "Vanilla", "Flan" };
         bool Won = true;
         for(int i = 0; i<5; i++)
         {
@@ -87,7 +91,7 @@ public class GameManager : MonoBehaviour, Observer
         else
         {
             LosePanel.SetActive(true);
-        }
+        }*/
         
     }
 
