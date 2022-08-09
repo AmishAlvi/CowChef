@@ -7,6 +7,8 @@ public class Food : MonoBehaviour, Observable
     public bool isAdded;
     private List<Observer> observers;
     private int orderInRecipe;
+    private string ingredientName;
+    
 
     private void Awake()
     {
@@ -62,5 +64,15 @@ public class Food : MonoBehaviour, Observable
     public int getOrder()
     {
         return orderInRecipe;
+    }
+
+    public void SetName(string newName)
+    {
+        ingredientName = newName;
+    }
+
+    public string GetName()
+    {
+        return ingredientName;
     }
 }

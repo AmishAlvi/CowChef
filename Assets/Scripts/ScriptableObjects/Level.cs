@@ -41,6 +41,7 @@ public class Level : ScriptableObject
         public Vector2 location;
         public Sprite sprite;
         public int orderNumber;
+        public string name;
     }
 
 }
