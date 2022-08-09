@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Food : MonoBehaviour, Observable
 {
@@ -8,6 +9,10 @@ public class Food : MonoBehaviour, Observable
     private List<Observer> observers;
     private int orderInRecipe;
     private string ingredientName;
+    private Text ingredientText;
+    private Image ingredientImage, ingredientTickBox;
+
+    [SerializeField] Sprite tick, cross;
     
 
     private void Awake()
@@ -29,6 +34,8 @@ public class Food : MonoBehaviour, Observable
         if(collision.tag =="laser")
         {
             isAdded = true;
+            ingredientTickBox.sprite = tick;
+            ingredientTickBox.gameObject.SetActive(true);
             NotifySubscribers();
             Debug.Log("notification sent");
         }
@@ -39,6 +46,7 @@ public class Food : MonoBehaviour, Observable
         if(collision.tag == "laser")
         {
             isAdded = false;
+            ingredientTickBox.gameObject.SetActive(false);
             NotifySubscribers();
         }
     }
@@ -75,4 +83,12 @@ public class Food : MonoBehaviour, Observable
     {
         return ingredientName;
     }
+
+    public void SetUI(Text text, Image icon, Image tickBox)
+    {
+        ingredientText = text;
+        ingredientImage = icon;
+        ingredientTickBox = tickBox;
+    }
+
 }

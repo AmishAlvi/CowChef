@@ -114,9 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAdded: 0
-  isBeingAdded: 0
-  progressSlider: {fileID: 3244822713014267832, guid: d903e63db71d1964ba5ef73b1bf62d75, type: 3}
-  progressSpeed: 10
+  tick: {fileID: 21300000, guid: b0a9324c27a3a2a43a47693d7d435233, type: 3}
+  cross: {fileID: 21300000, guid: fd00387e27d4797419298cad12ad692e, type: 3}
 --- !u!50 &-6498944710465136423
 Rigidbody2D:
   serializedVersion: 4

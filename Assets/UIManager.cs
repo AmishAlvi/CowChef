@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
             GameObject OrderText = Instantiate(OrderTextPrefab, OrderTextHolder.transform);
             OrderText.GetComponent<Text>().text = ingredient.GetName();
 
+            ingredient.SetUI(OrderText.GetComponent<Text>(), Icon.GetComponent<Image>(), Tick.GetComponent<Image>());
+
             Tick.SetActive(true);
             Icon.SetActive(true);
             OrderText.SetActive(true);
