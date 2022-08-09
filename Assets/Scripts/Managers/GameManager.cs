@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour, Observer
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
         GridManager.InitializeLevel();
-        UIManager.InstantiateUI(GridManager.GetFood());
         Ingredients = FindObjectsOfType<Food>();
+        UIManager.InstantiateUI(Ingredients);
         foreach (Food f in Ingredients)
         {
             f.Subscribe(this);

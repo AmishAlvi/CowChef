@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void InstantiateUI(List<Food> ingredients)
+    public void InstantiateUI(Food[] ingredients)
     {
         foreach(Food ingredient in ingredients)
         {
