@@ -21,11 +21,12 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void InstantiateUI(Food[] ingredients)
+    public void InstantiateUI(List<Food> ingredients)
     {
         foreach(Food ingredient in ingredients)
         {
             GameObject Tick = Instantiate(TickPrefab, TicksHolder.transform);
+            Tick.GetComponent<Image>().color = Color.clear;
 
             GameObject Icon = Instantiate(IconPrefab, OrderIconsHolder.transform);
             Icon.GetComponent<Image>().sprite = ingredient.GetComponent<SpriteRenderer>().sprite;
