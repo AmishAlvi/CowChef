@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OtherMinigame.unity
     guid: e177f55e8d0ce6848bf516c86d0cf1eb
   - enabled: 0
-    path: Assets/Scenes/laser minigame setup.unity
+    path: 
     guid: a603fe3ee8516c747aa07b8d78d900cd
   - enabled: 1
     path: Assets/Scenes/DialogScene_Success.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThankYouScene.unity
     guid: 28ee4983bac9a1c479033a8046ef989e
+  - enabled: 1
+    path: Assets/Scenes/DevTestScene.unity
+    guid: e56f7fe68922aa04bbd64ddbe29a22d8
   m_configObjects: {}

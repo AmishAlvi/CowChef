@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -23,16 +24,26 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
-
-        ingredients = new List<Food>();
+        
     }
 
     public void InitializeLevel()
     {
+        ingredients = new List<Food>();
         GenerateGrid();
         PlaceMirrors();
         PlaceLaser();
         PlaceFood();
+        SortFood();
+       // Debug.Log(ingredients);
+    }
+
+    public void PrintFood(List<Food> Food)
+    {
+        foreach (Food f in Food)
+        {
+            Debug.Log(f.GetName());
+        }
     }
 
     void GenerateGrid()
@@ -76,10 +87,22 @@ public class GridManager : MonoBehaviour
             var spawnedFood = Instantiate(level.foodPrefab, food.location, Quaternion.identity);
             spawnedFood.GetComponent<SpriteRenderer>().sprite = food.sprite;
             Food spFood = spawnedFood.GetComponent<Food>();
-            spFood.Subscribe(gameManager);
             spFood.setOrder(food.orderNumber);
             spFood.SetName(food.name);
-
+            ingredients.Add(spFood);
         }
+    }
+
+    public void SortFood()
+    {
+        List<Food> sortedFood =
+            ingredients.OrderBy(order => order.getOrder()).ToList();
+
+        ingredients = sortedFood;
+    }
+
+    public List<Food> GetFood()
+    {
+        return ingredients;
     }
 }

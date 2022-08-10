@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour, Observer
 {
+   // public UnityEvent test;
+
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject LosePanel;
     [SerializeField] private GridManager GridManager;
+    [SerializeField] private UIManager UIManager;
 
     public Level level;
 
 
-    public Food[] Ingredients;
-    public List<string> AddedToDish;
-    public List<Text> CookOrderTexts;
-    public List<Image> CookOrderImages;
+   // public Food[] Ingredients;
+    public List<Food> Foods;
     //public Button laserButton, stopButton;
     public GameObject Laser;
 
-    private int OrderCount = 0;
+    public int NextFoodIndex = 0;
 
     private void Awake()
     {
@@ -35,8 +37,9 @@ public class GameManager : MonoBehaviour, Observer
         WinPanel.SetActive(false);
         LosePanel.SetActive(false);
         GridManager.InitializeLevel();
-        Ingredients = FindObjectsOfType<Food>();
-        foreach (Food f in Ingredients)
+        Foods = GridManager.GetFood();
+        UIManager.InstantiateUI(Foods);
+        foreach (Food f in Foods)
         {
             f.Subscribe(this);
         }
@@ -46,21 +49,7 @@ public class GameManager : MonoBehaviour, Observer
     // Update is called once per frame
     void Update()
     {
-       /*foreach(Food f in Ingredients)
-        {
-            if(f.isAdded && !AddedToDish.Contains(f.name))
-            {
-                AddedToDish.Add(f.name);
-                CookOrderTexts[OrderCount].text = f.name;
-                CookOrderTexts[OrderCount].enabled = true;
-                CookOrderImages[OrderCount].sprite = f.gameObject.GetComponent<SpriteRenderer>().sprite;
-                CookOrderImages[OrderCount].enabled = true;
-                Debug.Log("new food text: " + CookOrderTexts[OrderCount].text);
-                OrderCount++;
-            }
-        }*/
-
-       if(AddedToDish.Count == 5)
+        if (NextFoodIndex >= Foods.Count)
         {
             CheckWin();
         }
@@ -68,34 +57,61 @@ public class GameManager : MonoBehaviour, Observer
 
     void CheckWin()
     {
-        string[] AddOrder = { "Sugar", "Maple", "CoconutMilk", "Vanilla", "Flan" };
         bool Won = true;
-        for(int i = 0; i<5; i++)
+        foreach(Food f in Foods)
         {
-            if(!AddedToDish[i].Equals(AddOrder[i]))
+            if(f.isInOrder == false)
             {
-                Debug.Log(AddedToDish[i].Equals(AddOrder[i]));
-                LosePanel.SetActive(true);
                 Won = false;
             }
         }
 
         if(Won)
         {
-            WinPanel.SetActive(true);
-        }
-        else
-        {
-            LosePanel.SetActive(true);
+            WinPanel.SetActive(Won);
         }
         
+    }
+
+    void CheckOrder(Food CurrentFoodHit)
+    {
+        Debug.Log(CurrentFoodHit.getOrder() + " " + NextFoodIndex);
+        switch (CurrentFoodHit.isAdded)
+        {
+            
+            case true:
+                if(CurrentFoodHit.getOrder() == NextFoodIndex)
+                {
+                    NextFoodIndex++;
+                    Foods[CurrentFoodHit.getOrder()].isAdded = true;
+                    Foods[CurrentFoodHit.getOrder()].isInOrder = true;
+                    Debug.Log("Correct hit");
+                    CurrentFoodHit.SetStatus(0);
+                    break;
+                }
+                else
+                {
+                    Debug.LogWarning("Wrong hit");
+                    Foods[CurrentFoodHit.getOrder()].isInOrder = false;
+                    CurrentFoodHit.SetStatus(1);
+                    break;
+                }
+            case false:
+                NextFoodIndex--;
+                if (NextFoodIndex < 0)
+                {
+                    NextFoodIndex = 0;
+                }
+                Foods[CurrentFoodHit.getOrder()].isAdded = false;
+                Foods[CurrentFoodHit.getOrder()].isInOrder = false;
+                break;
+        }
     }
 
     public void Notify(Observable observable)
     {
         Food tempFood = (Food) observable;
-        Debug.Log(tempFood.getOrder() + " " + tempFood.isAdded);
-        Debug.Log(tempFood.GetName());
+        CheckOrder(tempFood);
 
     }
 }

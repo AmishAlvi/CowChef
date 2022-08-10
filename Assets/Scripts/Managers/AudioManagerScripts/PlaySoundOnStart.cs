@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlaySoundOnStart : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
+    [SerializeField] private float volume;
 
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.PlayMusic(clip);
+        AudioManager.instance.PlaySound(clip, volume);
     }
 
 }
