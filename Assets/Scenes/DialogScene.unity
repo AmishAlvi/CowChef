@@ -662,6 +662,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 302546034}
     m_Modifications:
+    - target: {fileID: 437310792442261464, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: useFadeEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4634908636043654723, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -684,6 +688,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634908636043654723, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634908637683341868, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: fadeTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4741835326647951759, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
