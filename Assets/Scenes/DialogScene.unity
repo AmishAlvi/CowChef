@@ -662,9 +662,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 302546034}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 437310792442261464, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
       propertyPath: useFadeEffect
       value: 0
+=======
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Yarn.Unity.LineView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 437310793381303289, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4634908636043654723, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
       propertyPath: m_AnchorMax.y
