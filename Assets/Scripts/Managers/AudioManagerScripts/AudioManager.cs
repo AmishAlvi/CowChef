@@ -44,4 +44,20 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.mute = !musicSource.mute;
     }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    public void StopEffect()
+    {
+        effectSource.Stop();
+    }
+
+    public void StopAllAudio()
+    {
+        StopMusic();
+        StopEffect();
+    }
 }

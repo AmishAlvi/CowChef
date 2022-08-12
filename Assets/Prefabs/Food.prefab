@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2124780934886111426}
   - component: {fileID: 2124780934886111485}
   - component: {fileID: -6498944710465136423}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food
   m_TagString: food
   m_Icon: {fileID: 0}
@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAdded: 0
+  isInOrder: 0
+  ingredientImage: {fileID: 0}
+  ingredientTickBox: {fileID: 0}
   tick: {fileID: 21300000, guid: b0a9324c27a3a2a43a47693d7d435233, type: 3}
   cross: {fileID: 21300000, guid: fd00387e27d4797419298cad12ad692e, type: 3}
 --- !u!50 &-6498944710465136423
