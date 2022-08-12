@@ -7,7 +7,8 @@ public class GridManager : MonoBehaviour
 {
     private int width, height;
     [SerializeField] private Tile tilePrefab;
-    [SerializeField] private Draggable MirrorPrefab;
+    [SerializeField] private GameObject MirrorPrefab;
+    [SerializeField] private Draggable draggablePrefab;
     [SerializeField] private laser laser;
     [SerializeField] private Transform cam;
     [SerializeField] private GameManager gameManager;
@@ -69,7 +70,11 @@ public class GridManager : MonoBehaviour
     {
         foreach(Level.Mirror mirror in level.mirrors)
         {
-            Instantiate(MirrorPrefab, mirror.location, Quaternion.Euler(mirror.rotation));
+            Draggable draggableParent = Instantiate(draggablePrefab, mirror.location, Quaternion.identity);
+            GameObject mirrorChild = Instantiate(MirrorPrefab, mirror.location, Quaternion.Euler(mirror.rotation)) as GameObject;
+
+            mirrorChild.transform.parent = draggableParent.transform;
+
         }
 
     }

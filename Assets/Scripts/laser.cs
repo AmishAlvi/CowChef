@@ -43,7 +43,7 @@ public class laser : MonoBehaviour
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
                 Vector2 reflectDirection = GetDirection(hit, ray.direction, hit.collider.tag);
 
-                Debug.Log("new ray is being created with direction: " + reflectDirection);
+               // Debug.Log("new ray is being created with direction: " + reflectDirection);
                 ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
 
             }

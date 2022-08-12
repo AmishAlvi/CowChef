@@ -78,17 +78,17 @@ public class GameManager : MonoBehaviour, Observer
 
     void CheckOrder(Food CurrentFoodHit)
     {
-        //Debug.Log("this one's order: " + CurrentFoodHit.getOrder() + " Game Manager's Order: " + CurrentFoodPointer);
-        switch (CurrentFoodHit.isAdded)
+        Debug.Log("Food being added: " + CurrentFoodHit.GetName());
+        if(CurrentFoodHit.isAdded)
         {            
-            case true:
+           
                 if(CurrentFoodHit.getOrder() == Foods[CurrentlyAdded].getOrder())
                 {
                     Foods[CurrentlyAdded].isAdded = true;
                     Foods[CurrentlyAdded].isInOrder = true;
                     Debug.Log("Correct hit"); 
                     CurrentFoodHit.SetStatus(0);
-                    break;
+                    
                 }
                 else
                 {
@@ -96,16 +96,23 @@ public class GameManager : MonoBehaviour, Observer
                     Debug.LogWarning("Wrong hit");
                     Foods[CurrentFoodHit.getOrder()].isInOrder = false;
                     CurrentFoodHit.SetStatus(1);
-                    break;
+                    
                 }
-            case false:
-                Foods[CurrentFoodHit.getOrder()].isAdded = false;
-                Foods[CurrentFoodHit.getOrder()].isInOrder = false;
-                break;
+            
+            Debug.Log(Foods.FindAll(food => food.isAdded == true).Count);
+            CurrentlyAdded = Foods.FindAll(food => food.isAdded == true).Count;
+
+
+        }
+        else
+        {
+            Foods[CurrentFoodHit.getOrder()].isAdded = false;
+            Foods[CurrentFoodHit.getOrder()].isInOrder = false;
+            Debug.Log(Foods.FindAll(food => food.isAdded == true).Count);
+            CurrentlyAdded = Foods.FindAll(food => food.isAdded == true).Count;
         }
 
-        Debug.Log(Foods.FindAll(food => food.isAdded == true).Count);
-        CurrentlyAdded = Foods.FindAll(food => food.isAdded == true).Count;
+        
     }
 
     public void Notify(Observable observable)

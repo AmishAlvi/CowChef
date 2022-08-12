@@ -37,7 +37,7 @@ public class Food : MonoBehaviour, Observable
             isAdded = true;
             ingredientTickBox.sprite = tick;
             ingredientTickBox.color = Color.white;
-            Debug.Log("notification sent by on enter");
+           // Debug.Log("notification sent by on enter");
             NotifySubscribers();
         }
     }
@@ -48,7 +48,7 @@ public class Food : MonoBehaviour, Observable
         {
             isAdded = false;
             ingredientTickBox.color = Color.clear;
-            Debug.Log("notification sent by on exit");
+            //Debug.Log("notification sent by on exit");
             NotifySubscribers();
         }
     }
