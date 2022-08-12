@@ -13,6 +13,7 @@ public class Food : MonoBehaviour, Observable
     public Image ingredientImage, ingredientTickBox;
 
     [SerializeField] Sprite tick, cross;
+    [SerializeField] AudioClip correct, wrong;
     
 
     private void Awake()
@@ -100,11 +101,13 @@ public class Food : MonoBehaviour, Observable
                 ingredientTickBox.sprite = tick;
                 ingredientTickBox.color = Color.white;
                 isInOrder = true;
+                AudioManager.instance.PlaySound(correct, 0.5f);
                 break;
             case 1: //Wrong
                 ingredientTickBox.sprite = cross;
                 ingredientTickBox.color = Color.white;
                 isInOrder=false;
+                AudioManager.instance.PlaySound(wrong, 0.5f);
                 break;
 
         }
