@@ -16,6 +16,7 @@ public class GridManager : MonoBehaviour
     public Level level;
     public Vector3 mirrorLocation;
     private List<Food> ingredients;
+    private List<Tile> tiles;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class GridManager : MonoBehaviour
     public void InitializeLevel()
     {
         ingredients = new List<Food>();
+        tiles = new List<Tile>();
         GenerateGrid();
         PlaceMirrors();
         PlaceLaser();
@@ -60,6 +62,7 @@ public class GridManager : MonoBehaviour
                 var isOffset = (x % 2 == 0 && y%2 != 0) || (x %2 != 0 && y%2 == 0);
                 Debug.Log(isOffset);
                 spawnedTile.Init(isOffset);
+                tiles.Add(spawnedTile);
             }
         }
 
@@ -83,6 +86,7 @@ public class GridManager : MonoBehaviour
     {
         var spawnedLaser = Instantiate(laser, level.laserLocation, Quaternion.identity);
         spawnedLaser.direction = level.laserDirection;
+        RemoveTileBelow(level.laserLocation);
     }
 
     void PlaceFood()
@@ -95,6 +99,7 @@ public class GridManager : MonoBehaviour
             spFood.setOrder(food.orderNumber);
             spFood.SetName(food.name);
             ingredients.Add(spFood);
+            RemoveTileBelow(food.location);
         }
     }
 
@@ -109,5 +114,11 @@ public class GridManager : MonoBehaviour
     public List<Food> GetFood()
     {
         return ingredients;
+    }
+
+    private void RemoveTileBelow(Vector2 location)
+    {
+        GameObject TileBelow = tiles.Find(tile => tile.gameObject.name.Equals($"Tile {location.x} {location.y}")).gameObject;
+        TileBelow.SetActive(false);
     }
 }
