@@ -10,6 +10,7 @@ TagManager:
   - laser
   - grid point
   - draggable
+  - barrier
   layers:
   - Default
   - TransparentFX

@@ -60,7 +60,7 @@ public class laser : MonoBehaviour
     {
 
         Vector2 direction = tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;
-        if(Vector2.Dot(direction, rayDirection) == -1)
+        if(Vector2.Dot(direction, rayDirection) == -1 || tag.Equals("barrier"))
         {
             return Vector2.zero;
         }

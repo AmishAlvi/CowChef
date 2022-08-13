@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private laser laser;
     [SerializeField] private Transform cam;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject barrierPrefab;
 
     public Level level;
     public Vector3 mirrorLocation;
@@ -64,6 +65,20 @@ public class GridManager : MonoBehaviour
                 spawnedTile.Init(isOffset);
                 tiles.Add(spawnedTile);
             }
+        }
+
+        for(int y = -1; y < height + 1; y++)
+        {
+            Instantiate(barrierPrefab, new Vector3(-1, y, 0), Quaternion.identity);
+            if (y == height || y == -1)
+            {
+                for(int x = 0; x < width; x++)
+                {
+                    Instantiate(barrierPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                }
+            }
+            Instantiate(barrierPrefab, new Vector3(width, y, 0), Quaternion.identity);
+
         }
 
         cam.transform.position = new Vector3((float) width/2 -0.5f , (float)height / 2 - 0.5f, -10);
