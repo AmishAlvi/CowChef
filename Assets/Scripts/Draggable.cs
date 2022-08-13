@@ -7,6 +7,7 @@ public class Draggable : MonoBehaviour
     public delegate void DragEndedDelegate(Draggable draggable);
 
     public DragEndedDelegate dragEndedCallback;
+    private Tile currentSnapPoint;
 
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
@@ -48,6 +49,16 @@ public class Draggable : MonoBehaviour
     {
         isDragged = false;
         dragEndedCallback(this);
+    }
+
+    public void SetCurrentSnapPoint(Tile snapPoint)
+    {
+        currentSnapPoint = snapPoint;   
+    }
+
+    public Tile GetCurrentSnapPoint()
+    {
+        return currentSnapPoint;
     }
 
     /*Vector3 GetMousePos()

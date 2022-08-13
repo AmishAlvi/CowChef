@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: -6125538679785611267, guid: 94ed4976cf4f494459a9d0132397707f, type: 3}
-  MirrorPrefab: {fileID: 1056190138194152380, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
+  MirrorPrefab: {fileID: 1056190138194152383, guid: aab4567661d09e8428cc3ef6376a8e2f, type: 3}
+  draggablePrefab: {fileID: 8562705312851723282, guid: 6cfdd1c825e11314ab4cf089bc36cb7b, type: 3}
   laser: {fileID: 6098176869046485948, guid: 0c76e1c282a71134196fee4d543dab12, type: 3}
   cam: {fileID: 0}
   gameManager: {fileID: 0}

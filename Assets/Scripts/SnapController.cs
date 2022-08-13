@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SnapController : MonoBehaviour
 {
-    private List<Transform> snapPoints;
+    private List<Tile> snapPoints;
     private List<Draggable> draggableObjects;
 
     public float snapRange = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
-        snapPoints = new List<Transform>();
+        snapPoints = new List<Tile>();
         draggableObjects = new List<Draggable>();
 
         foreach (Draggable dg in FindObjectsOfType(typeof(Draggable)))
@@ -19,15 +19,29 @@ public class SnapController : MonoBehaviour
             draggableObjects.Add(dg);
         }
 
-        foreach(GameObject gp in GameObject.FindGameObjectsWithTag("grid point"))
+        foreach (Tile t in FindObjectsOfType<Tile>())
         {
-            snapPoints.Add(gp.transform);
+            snapPoints.Add(t);
         }
+        
+        
 
 
         foreach(Draggable draggable in draggableObjects)
         {
+            Tile closestSnapPoint = null;
             draggable.dragEndedCallback = onDragEnded;
+            foreach (Tile snapPoint in snapPoints)
+            {
+                float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.transform.localPosition);
+                if (closestSnapPoint == null || currentDistance < 1)
+                {
+                    closestSnapPoint = snapPoint;
+                    closestSnapPoint.Occupy(true);
+                    draggable.SetCurrentSnapPoint(closestSnapPoint);
+                    
+                }
+            }
         }
     }
 
@@ -36,24 +50,27 @@ public class SnapController : MonoBehaviour
         float closestDistance = -1;
         Transform closestSnapPoint = null;
 
-        foreach(Transform snapPoint in snapPoints)
+        foreach(Tile snapPoint in snapPoints)
         {
-            float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.localPosition);
+            float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.transform.localPosition);
             if(closestSnapPoint == null || currentDistance < closestDistance)
             {
-                closestSnapPoint = snapPoint;
+                closestSnapPoint = snapPoint.transform;
                 closestDistance = currentDistance;
             }
         }
 
-        if(closestSnapPoint != null && closestDistance <= snapRange)
+        if(closestSnapPoint != null && closestDistance <= snapRange && !closestSnapPoint.GetComponent<Tile>().IsOccupied())
         {
+            draggable.GetCurrentSnapPoint().Occupy(false);
             draggable.transform.localPosition = closestSnapPoint.localPosition;
+            draggable.SetCurrentSnapPoint(closestSnapPoint.GetComponent<Tile>());
+            closestSnapPoint.GetComponent<Tile>().Occupy(true);
         }
         else
         {
-            draggable.transform.localPosition = new Vector3(draggable.MouseDragStartPosition.x, draggable.MouseDragStartPosition.y, 0);
-            onDragEnded(draggable);
+            draggable.transform.localPosition = draggable.GetCurrentSnapPoint().transform.localPosition;//new Vector3(draggable.MouseDragStartPosition.x, draggable.MouseDragStartPosition.y, 0);
+           // onDragEnded(draggable);
         }
     }
 

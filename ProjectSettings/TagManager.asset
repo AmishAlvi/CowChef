@@ -9,6 +9,7 @@ TagManager:
   - food
   - laser
   - grid point
+  - draggable
   layers:
   - Default
   - TransparentFX
