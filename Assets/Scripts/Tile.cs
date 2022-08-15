@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private Color baseColor, offsetColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private bool Occupied = false;
+    public bool Occupied = false;
 
     public void Init(bool isOffset)
     {

@@ -61,7 +61,7 @@ public class GridManager : MonoBehaviour
                 spawnedTile.transform.parent = transform;
 
                 var isOffset = (x % 2 == 0 && y%2 != 0) || (x %2 != 0 && y%2 == 0);
-                Debug.Log(isOffset);
+                //Debug.Log(isOffset);
                 spawnedTile.Init(isOffset);
                 tiles.Add(spawnedTile);
             }
