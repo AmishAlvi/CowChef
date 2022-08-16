@@ -8,6 +8,7 @@ public class ChangeMusic : MonoBehaviour
     [SerializeField] float volume;
     public void TriggerChangeMusic()
     {
+        AudioManager.instance.StopAllAudio();
         AudioManager.instance.ChangeMusic(musicClip, volume);
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - food
   - laser
   - grid point
+  - draggable
+  - barrier
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Mirrors
   - Water
   - UI
-  - 
+  - Draggable
   - 
   - 
   - 

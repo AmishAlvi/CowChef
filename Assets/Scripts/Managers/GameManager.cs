@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+//using System.Linq;
 
 public class GameManager : MonoBehaviour, Observer
 {
@@ -19,10 +20,12 @@ public class GameManager : MonoBehaviour, Observer
 
    // public Food[] Ingredients;
     public List<Food> Foods;
+    private List<Food> tempCheckList;
     //public Button laserButton, stopButton;
     public GameObject Laser;
 
-    public int NextFoodIndex = 0;
+    //public int CurrentFoodPointer = -1;
+    private int CurrentlyAdded = 0;
 
     private void Awake()
     {
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour, Observer
     // Update is called once per frame
     void Update()
     {
-        if (NextFoodIndex >= Foods.Count)
+        if (CurrentlyAdded >= Foods.Count)
         {
             CheckWin();
         }
@@ -75,37 +78,41 @@ public class GameManager : MonoBehaviour, Observer
 
     void CheckOrder(Food CurrentFoodHit)
     {
-        Debug.Log(CurrentFoodHit.getOrder() + " " + NextFoodIndex);
-        switch (CurrentFoodHit.isAdded)
-        {
-            
-            case true:
-                if(CurrentFoodHit.getOrder() == NextFoodIndex)
+        Debug.Log("Food being added: " + CurrentFoodHit.GetName());
+        if(CurrentFoodHit.isAdded)
+        {            
+           
+                if(CurrentFoodHit.getOrder() == Foods[CurrentlyAdded].getOrder())
                 {
-                    NextFoodIndex++;
-                    Foods[CurrentFoodHit.getOrder()].isAdded = true;
-                    Foods[CurrentFoodHit.getOrder()].isInOrder = true;
-                    Debug.Log("Correct hit");
+                    Foods[CurrentlyAdded].isAdded = true;
+                    Foods[CurrentlyAdded].isInOrder = true;
+                    Debug.Log("Correct hit"); 
                     CurrentFoodHit.SetStatus(0);
-                    break;
+                    
                 }
                 else
                 {
+                   // CurrentFoodPointer++;
                     Debug.LogWarning("Wrong hit");
                     Foods[CurrentFoodHit.getOrder()].isInOrder = false;
                     CurrentFoodHit.SetStatus(1);
-                    break;
+                    
                 }
-            case false:
-                NextFoodIndex--;
-                if (NextFoodIndex < 0)
-                {
-                    NextFoodIndex = 0;
-                }
-                Foods[CurrentFoodHit.getOrder()].isAdded = false;
-                Foods[CurrentFoodHit.getOrder()].isInOrder = false;
-                break;
+            
+            Debug.Log(Foods.FindAll(food => food.isAdded == true).Count);
+            CurrentlyAdded = Foods.FindAll(food => food.isAdded == true).Count;
+
+
         }
+        else
+        {
+            Foods[CurrentFoodHit.getOrder()].isAdded = false;
+            Foods[CurrentFoodHit.getOrder()].isInOrder = false;
+            Debug.Log(Foods.FindAll(food => food.isAdded == true).Count);
+            CurrentlyAdded = Foods.FindAll(food => food.isAdded == true).Count;
+        }
+
+        
     }
 
     public void Notify(Observable observable)

@@ -43,6 +43,7 @@ public class laser : MonoBehaviour
                 remainingLength -= Vector2.Distance(ray.origin, hit.point);
                 Vector2 reflectDirection = GetDirection(hit, ray.direction, hit.collider.tag);
 
+               // Debug.Log("new ray is being created with direction: " + reflectDirection);
                 ray = new Ray2D(hit.point + reflectDirection, reflectDirection);
 
             }
@@ -59,7 +60,7 @@ public class laser : MonoBehaviour
     {
 
         Vector2 direction = tag == "mirror" ? Vector2.Reflect(rayDirection.normalized, hit.normal) : rayDirection;
-        if(Vector2.Dot(direction, rayDirection) == -1)
+        if(Vector2.Dot(direction, rayDirection) == -1 || tag.Equals("barrier"))
         {
             return Vector2.zero;
         }
