@@ -455,6 +455,18 @@ PrefabInstance:
       propertyPath: startNode
       value: Customer_2_Recipe_Failed
       objectReference: {fileID: 0}
+    - target: {fileID: 6651477123790052236, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 302546035}
+    - target: {fileID: 6651477123790052236, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651477123790052236, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ThankYouScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37c4c3a3d488274f888303c35b7b4e0, type: 3}
 --- !u!4 &678600613 stripped

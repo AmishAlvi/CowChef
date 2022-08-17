@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2124780934886111426}
   - component: {fileID: 2124780934886111485}
   - component: {fileID: -6498944710465136423}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food
   m_TagString: food
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &2124780934886111485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +114,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAdded: 0
+  isInOrder: 0
+  ingredientImage: {fileID: 0}
+  ingredientTickBox: {fileID: 0}
   tick: {fileID: 21300000, guid: b0a9324c27a3a2a43a47693d7d435233, type: 3}
   cross: {fileID: 21300000, guid: fd00387e27d4797419298cad12ad692e, type: 3}
+  correct: {fileID: 8300000, guid: f8986207227aa82459cafe121bc696f3, type: 3}
+  wrong: {fileID: 8300000, guid: 1df2820bc427aad4b898a08146e7d330, type: 3}
 --- !u!50 &-6498944710465136423
 Rigidbody2D:
   serializedVersion: 4

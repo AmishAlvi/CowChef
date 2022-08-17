@@ -14,15 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BookScene.unity
     guid: 99f910879c965f942a7a9b7dc1ddd505
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameDesignTestScenes.unity
     guid: 54e9c3cd19042a140b89f1f0f2a76220
   - enabled: 0
     path: Assets/Scenes/OtherMinigame.unity
     guid: e177f55e8d0ce6848bf516c86d0cf1eb
-  - enabled: 0
-    path: 
-    guid: a603fe3ee8516c747aa07b8d78d900cd
   - enabled: 1
     path: Assets/Scenes/DialogScene_Success.unity
     guid: 25382d5b5a4fd5a4f88cbf3952e929f3
@@ -32,7 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThankYouScene.unity
     guid: 28ee4983bac9a1c479033a8046ef989e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DevTestScene.unity
     guid: e56f7fe68922aa04bbd64ddbe29a22d8
+  - enabled: 1
+    path: Assets/Scenes/CookCaramelScene.unity
+    guid: 4153188cc0b95004aa116275da1ed203
+  - enabled: 1
+    path: Assets/Scenes/CookFlanScene.unity
+    guid: fcdbfb41c6ea7b94eab32619e31f4cde
+  - enabled: 1
+    path: Assets/Scenes/CookVinegarScene.unity
+    guid: c61172d0177a10440b276455fc981f83
   m_configObjects: {}

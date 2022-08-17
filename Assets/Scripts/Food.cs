@@ -13,6 +13,8 @@ public class Food : MonoBehaviour, Observable
     public Image ingredientImage, ingredientTickBox;
 
     [SerializeField] Sprite tick, cross;
+    [SerializeField] AudioClip correct, wrong;
+    [SerializeField] float clipVolume;
     
 
     private void Awake()
@@ -36,7 +38,7 @@ public class Food : MonoBehaviour, Observable
             isAdded = true;
             ingredientTickBox.sprite = tick;
             ingredientTickBox.color = Color.white;
-            Debug.Log("notification sent by on enter");
+           // Debug.Log("notification sent by on enter");
             NotifySubscribers();
         }
     }
@@ -47,7 +49,7 @@ public class Food : MonoBehaviour, Observable
         {
             isAdded = false;
             ingredientTickBox.color = Color.clear;
-            Debug.Log("notification sent by on exit");
+            //Debug.Log("notification sent by on exit");
             NotifySubscribers();
         }
     }
@@ -100,11 +102,13 @@ public class Food : MonoBehaviour, Observable
                 ingredientTickBox.sprite = tick;
                 ingredientTickBox.color = Color.white;
                 isInOrder = true;
+                AudioManager.instance.PlaySound(correct, clipVolume);
                 break;
             case 1: //Wrong
                 ingredientTickBox.sprite = cross;
                 ingredientTickBox.color = Color.white;
                 isInOrder=false;
+                AudioManager.instance.PlaySound(wrong, clipVolume);
                 break;
 
         }

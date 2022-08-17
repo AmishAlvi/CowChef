@@ -3,7 +3,14 @@ guid: fde738378f2a10a459cde2419b67a237
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tilePrefab: {instanceID: 0}
+  - MirrorPrefab: {instanceID: 0}
+  - draggablePrefab: {fileID: 8562705312851723282, guid: 6cfdd1c825e11314ab4cf089bc36cb7b, type: 3}
+  - laser: {fileID: 6098176869046485948, guid: 0c76e1c282a71134196fee4d543dab12, type: 3}
+  - cam: {instanceID: 0}
+  - gameManager: {instanceID: 0}
+  - level: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
