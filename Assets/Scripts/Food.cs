@@ -14,7 +14,6 @@ public class Food : MonoBehaviour, Observable
 
     [SerializeField] Sprite tick, cross;
     [SerializeField] AudioClip correct, wrong;
-    [SerializeField] float clipVolume;
     
 
     private void Awake()
@@ -102,13 +101,13 @@ public class Food : MonoBehaviour, Observable
                 ingredientTickBox.sprite = tick;
                 ingredientTickBox.color = Color.white;
                 isInOrder = true;
-                AudioManager.instance.PlaySound(correct, clipVolume);
+                AudioManager.instance.PlaySound(correct, 0.5f);
                 break;
             case 1: //Wrong
                 ingredientTickBox.sprite = cross;
                 ingredientTickBox.color = Color.white;
                 isInOrder=false;
-                AudioManager.instance.PlaySound(wrong, clipVolume);
+                AudioManager.instance.PlaySound(wrong, 0.5f);
                 break;
 
         }
