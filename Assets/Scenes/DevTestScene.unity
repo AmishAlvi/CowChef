@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 468509630}
   effectSource: {fileID: 0}
+  loopingEffectSource: {fileID: 0}
 --- !u!4 &470083420
 Transform:
   m_ObjectHideFlags: 0
@@ -5123,6 +5124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3536449841722938990, guid: 0c76e1c282a71134196fee4d543dab12, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6098176869046485944, guid: 0c76e1c282a71134196fee4d543dab12, type: 3}
       propertyPath: m_Name
       value: Laser
