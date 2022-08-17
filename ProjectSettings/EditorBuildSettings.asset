@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CookVinegarScene.unity
     guid: c61172d0177a10440b276455fc981f83
+  - enabled: 1
+    path: Assets/Scenes/CookCaramelSceneForVinegar.unity
+    guid: 7152efbbcbfbbab40a2d4e49e9e179c7
   m_configObjects: {}
