@@ -4227,7 +4227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175921473983096540, guid: 580a224e7b896bc4e9762a8ad16934e3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7175921473983096540, guid: 580a224e7b896bc4e9762a8ad16934e3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4651,6 +4651,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1312841020}
+    - target: {fileID: 5442961767333419650, guid: 0d63626428605494488ab48ea1607daf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CookVinegarScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5442961768301722138, guid: 0d63626428605494488ab48ea1607daf, type: 3}
       propertyPath: m_Name
       value: WinPanel
