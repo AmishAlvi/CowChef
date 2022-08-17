@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     //static variable holds singleton instance
     public static AudioManager instance;
 
-    [SerializeField] private AudioSource musicSource, effectSource;
+    [SerializeField] private AudioSource musicSource, effectSource, loopingEffectSource;
 
     //making sure there is only ever 1 instance of this script
     private void Awake()
@@ -26,6 +26,12 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(AudioClip audioClip, float volume)
     {
         effectSource.PlayOneShot(audioClip, volume);
+    }
+
+    public void PlaySoundLoop(AudioClip audioClip, float volume)
+    {
+        loopingEffectSource.loop = true;
+        loopingEffectSource.PlayOneShot(audioClip,volume);
     }
 
     public void ChangeMusic(AudioClip clip, float volume)

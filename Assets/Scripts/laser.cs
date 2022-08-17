@@ -18,7 +18,9 @@ public class laser : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         mirrorsMask = 1 << LayerMask.NameToLayer("Mirrors");
+
     }
+
 
     // Update is called once per frame
     void Update()
