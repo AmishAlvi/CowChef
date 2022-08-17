@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour, Observer
     [SerializeField] private GameObject LosePanel;
     [SerializeField] private GridManager GridManager;
     [SerializeField] private UIManager UIManager;
+
     public Level level;
 
 
