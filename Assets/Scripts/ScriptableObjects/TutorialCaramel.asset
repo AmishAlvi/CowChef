@@ -19,7 +19,7 @@ MonoBehaviour:
   foodPrefab: {fileID: 2124780934886111427, guid: 78490d5065d8b8b4d9b7d6844af34f3d, type: 3}
   mirrors:
   - rotation: {x: 0, y: 0, z: 0}
-    location: {x: 1, y: 2}
+    location: {x: 3, y: 3}
   - rotation: {x: 0, y: 0, z: -90}
     location: {x: 2, y: 1}
   - rotation: {x: 0, y: 0, z: 180}
