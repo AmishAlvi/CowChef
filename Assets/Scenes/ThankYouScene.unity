@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Thank you \nfor playing!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 61aff23586d95834db5c5a87a6808274, type: 2}
-  m_sharedMaterial: {fileID: 2448762757355870184, guid: 61aff23586d95834db5c5a87a6808274, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdc160bba3f1fea42833c35112031a03, type: 2}
+  m_sharedMaterial: {fileID: 1172733564266767829, guid: fdc160bba3f1fea42833c35112031a03, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
