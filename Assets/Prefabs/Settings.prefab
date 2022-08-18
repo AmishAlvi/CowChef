@@ -1602,8 +1602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7.8812}
-  m_SizeDelta: {x: 854.68, y: 531.3554}
+  m_AnchoredPosition: {x: 0, y: 0.00000667572}
+  m_SizeDelta: {x: 986, y: 532}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1957222602506508978
 CanvasRenderer:
@@ -1710,7 +1710,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Amish Alvi (Twinkie) - Lead Programmer
 
-    Candi Vieira (m1nus) - Game
+    Candida Vieira (m1nus) - Game
     and UI Designer
 
     Kerrie Holland - Producer
